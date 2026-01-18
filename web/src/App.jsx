@@ -298,8 +298,7 @@ function App() {
       </main>
 
       <footer className="footer">
-        <p>Fabert Hamachi v1.0 | Criado por <strong>Fabert</strong> | <a href="https://twitter.com/fabertleury" target="_blank" rel="noopener">@fabertleury</a></p>
-        <p className="footer-sub">Feito com ❤️ para a comunidade Warcraft III</p>
+        <p>Criado por <strong>Fabert</strong></p>
       </footer>
     </div>
   )
