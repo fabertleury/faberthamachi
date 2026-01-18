@@ -238,22 +238,34 @@ function App() {
                 </div>
                 <div className="code-display">
                   <code className="room-code-big">{roomCode}</code>
-                  <button
-                    className={`btn-copy ${copied ? 'copied' : ''}`}
-                    onClick={() => copyToClipboard(roomCode)}
-                  >
-                    {copied ? (
-                      <>
-                        <CheckCircle2 size={18} />
-                        Copiado!
-                      </>
-                    ) : (
-                      <>
-                        <Copy size={18} />
-                        Copiar Código
-                      </>
-                    )}
-                  </button>
+                  <div className="button-group">
+                    <button
+                      className={`btn-copy ${copied ? 'copied' : ''}`}
+                      onClick={() => copyToClipboard(roomCode)}
+                    >
+                      {copied ? (
+                        <>
+                          <CheckCircle2 size={18} />
+                          Copiado!
+                        </>
+                      ) : (
+                        <>
+                          <Copy size={18} />
+                          Copiar Código
+                        </>
+                      )}
+                    </button>
+                    <a
+                      href="/Fabert_Helper.bat"
+                      download="Fabert_Helper.bat"
+                      className="btn-download"
+                    >
+                      ⚡ Baixar Ajudante de Conexão
+                    </a>
+                  </div>
+                </div>
+                <div className="host-alert">
+                  <p>⚠️ <strong>IMPORTANTE:</strong> Para o jogo aparecer na LAN, o <strong>HOST</strong> deve abrir a porta <strong>6112</strong> no roteador.</p>
                 </div>
               </div>
             )}
