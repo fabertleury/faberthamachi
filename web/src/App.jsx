@@ -7,6 +7,11 @@ const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:3001'
 
 function App() {
   const [socket, setSocket] = useState(null)
+
+  // Debug para você ver no console do navegador:
+  console.log('--- FABERT HAMACHI DEBUG ---');
+  console.log('Tentando conectar em:', SOCKET_URL);
+  console.log('---------------------------');
   const [mode, setMode] = useState(null)
   const [roomCode, setRoomCode] = useState('')
   const [userName, setUserName] = useState('')
