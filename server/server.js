@@ -186,7 +186,7 @@ io.on('connection', (socket) => {
 
 const PORT = process.env.PORT || 3001;
 
-httpServer.listen(PORT, () => {
+httpServer.listen(PORT, '0.0.0.0', () => {
     console.log('');
     console.log('╔═══════════════════════════════════════════════════╗');
     console.log('║      FABERT HAMACHI SERVER v1.0                   ║');
