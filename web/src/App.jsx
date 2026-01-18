@@ -7,11 +7,6 @@ const SOCKET_URL = 'http://b44w88o4s4scg4sos40gkkk8.72.62.10.101.sslip.io'
 
 function App() {
   const [socket, setSocket] = useState(null)
-
-  // Debug para você ver no console do navegador:
-  console.log('--- FABERT HAMACHI DEBUG ---');
-  console.log('Tentando conectar em:', SOCKET_URL);
-  console.log('---------------------------');
   const [mode, setMode] = useState(null)
   const [roomCode, setRoomCode] = useState('')
   const [userName, setUserName] = useState('')
