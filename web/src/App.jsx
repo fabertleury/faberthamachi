@@ -3,7 +3,7 @@ import { io } from 'socket.io-client'
 import { Copy, Users, Wifi, WifiOff, Crown, Sword, CheckCircle2, XCircle } from 'lucide-react'
 import './App.css'
 
-const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:3001'
+const SOCKET_URL = 'http://b44w88o4s4scg4sos40gkkk8.72.62.10.101.sslip.io'
 
 function App() {
   const [socket, setSocket] = useState(null)

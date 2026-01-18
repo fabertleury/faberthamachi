@@ -24,6 +24,10 @@ function generateRoomCode() {
 }
 
 // API REST
+app.get('/', (req, res) => {
+    res.send('<h1>Fabert Hamachi Server v1.0</h1><p>Status: Online e aguardando batalhas! ⚔️</p>');
+});
+
 app.get('/api/health', (req, res) => {
     res.json({
         status: 'online',
