@@ -17,7 +17,11 @@ function App() {
   const [copied, setCopied] = useState(false)
 
   useEffect(() => {
-    const newSocket = io(SOCKET_URL)
+    const newSocket = io(SOCKET_URL, {
+      transports: ['websocket', 'polling'],
+      forceNew: true,
+      reconnectionAttempts: 5
+    })
     setSocket(newSocket)
 
     return () => newSocket.close()
