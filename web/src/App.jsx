@@ -76,10 +76,35 @@ function App() {
     socket.emit('join-room', { roomCode: inputRoomCode.toUpperCase(), userName: inputUserName })
   }
 
+  // Fallback para sites sem HTTPS (como sslip.io)
+  const fallbackCopyTextToClipboard = (text) => {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.position = "fixed";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Erro ao copiar:', err);
+    }
+    document.body.removeChild(textArea);
+  }
+
   const copyToClipboard = (text) => {
-    navigator.clipboard.writeText(text)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+    if (!navigator.clipboard) {
+      fallbackCopyTextToClipboard(text);
+      return;
+    }
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }, () => {
+      fallbackCopyTextToClipboard(text);
+    });
   }
 
   const handleDisconnect = () => {
